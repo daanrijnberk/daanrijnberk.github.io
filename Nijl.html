@@ -57,13 +57,56 @@ crossorigin=""></script>
       <script>var mymap = L.map('mapid').setView([31.234339, 31.083825], 13);
       L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
           attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-          maxZoom: 10,
+          maxZoom: 9,
           id: 'mapbox/streets-v11',
           tileSize: 512,
           zoomOffset: -1,
           accessToken: 'pk.eyJ1IjoiZGFhbjA4MDIiLCJhIjoiY2tpNXYzMDV6MnVldjJxbXB1emw5aDNyZCJ9.-C7Qteu7PIRRIyBuiedBtQ'
       }).addTo(mymap);
+
+      var myvar = 
+        {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          30.390930175781246,
+          31.445067099748265
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#f50000",
+        "marker-size": "medium",
+        "marker-symbol": "water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.766967773437496,
+          31.466153715024294
+        ]
+      }
+    }
+  ]
+};
+
+var x = L.geoJSON(myvar).addTo(mymap);
+
+
       </script>
+
+      
     </div>
     <div class="columnright">
       <h1>De geografie van de Nijl delta</h1>
