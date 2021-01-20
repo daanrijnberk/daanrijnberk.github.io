@@ -51,7 +51,10 @@ crossorigin=""></script>
 <div class="row">
     <div class="columnleft">
       <div id="mapid"></div>
-      <script>var mymap = L.map('mapid').setView([29.605,-89.881], 13);
+
+      <script>
+      
+      var mymap = L.map('mapid').setView([29.605,-89.881], 13);
       L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
           attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
           maxZoom: 10,
@@ -60,7 +63,66 @@ crossorigin=""></script>
           zoomOffset: -1,
           accessToken: 'pk.eyJ1IjoiZGFhbjA4MDIiLCJhIjoiY2tpNXYzMDV6MnVldjJxbXB1emw5aDNyZCJ9.-C7Qteu7PIRRIyBuiedBtQ'
       }).addTo(mymap);
+
+      var myvar = 
+      {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#2b00ff",
+        "marker-size": "medium",
+        "marker-symbol": "water"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.99313354492188,
+          29.834092029616816
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#ff0000",
+        "marker-size": "medium",
+        "marker-symbol": "city"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.098876953125,
+          29.987649890847624
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "marker-color": "#7e7e7e",
+        "marker-size": "medium",
+        "marker-symbol": "star-stroked"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -89.45755004882812,
+          29.359436379841345
+        ]
+      }
+    }
+  ]
+};
+
+var x = L.geoJSON(myvar).addTo(mymap);
+
+
+     
       </script>
+
+
     </div>
     <div class="columnright">
       <h1>De geografie van de Mississippi delta</h1>
